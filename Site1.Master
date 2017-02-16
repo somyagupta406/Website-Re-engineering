@@ -1,0 +1,176 @@
+﻿ <%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.Master.vb" Inherits="WebApplication1.Site2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Food Delivery | Order Food Online | foodpanda </title>
+ 
+                <asp:ContentPlaceHolder ID="head" runat="server" />
+    <link href="Styles/StyleSheet1.css" type="text/css" rel="stylesheet"/>
+   <script type="text/javascript"> 
+     
+       var divHighDegree = document.getElementById("divHighDegree");
+       var cbxHighDegree = document.getElementById("ContentPlaceHolder1_cbxHighDegree");
+       var ddlHighDegree = document.getElementById("ContentPlaceHolder1_ddlHighDegree");
+
+          function toggle_visibility(id) { 
+               var e = document.getElementById(id); 
+               if (e.style.display == 'block') { 
+                    e.style.display = 'none'; 
+               } 
+               else { 
+                    e.style.display = 'block'; 
+               } 
+          } 
+          
+         function displayWindows() {
+              //alert("clicked Windows");
+             var divHighDegree = document.getElementById("divHighDegree");
+              var cbxHighDegree = document.getElementById("ContentPlaceHolder1_cbxHighDegree");
+              var ddlHighDegree = document.getElementById("ContentPlaceHolder1_ddlHighDegree");
+
+
+              if (cbxHighDegree.checked) {
+                  divHighDegree.style.display = 'block';
+              }
+              else {
+                  ddlHighDegree.value = "Select Highest Degree Obtained";
+                  divHighDegree.style.display = 'none';
+              }
+          }
+
+
+
+          var func1 = function (num, exp) {
+
+              // Recursive Function
+              //function func1(num, exp) {
+              //    if (exp === 0) {
+              //        return 1;
+              //    }
+
+              //    return num * func1(num, exp - 1)
+              //}
+
+
+              //Non Recursive function
+              var powerOf = 1;
+              while (exp > 0) {
+                  powerOf *=num;
+                  exp -= 1;
+              }
+              return powerOf;
+              
+          }
+
+       expo= func1(3,10)
+      // alert("Result of Exponent function:"+expo);
+     </script> 
+      
+</head>
+<body>
+    <form id="form1" runat="server">
+      <header >
+        <div class="orange">
+        <ul class="menu">
+            <a href="#"> <img src="Images/Foodpanda%20logo.png"  class="log"/> </a>
+            <li class="opt">
+                 <a href="#" class="drop"> 
+           <asp:LinkButton ID="lbtnGridView" runat="server" Text="View GridView" ForeColor="#FFFFFF"/> 
+           <asp:Label ID="Label3Line" runat="server" Text="|" ForeColor="#FFFFFF" /> 
+      </a> 
+                <a href='#' class="topmenu">About</a>
+                <a href='#' class="topmenu">Team</a>
+                <a href='#' class="topmenu">Careers</a>
+                <a href='#' class="topmenu">Press</a>
+                <a href='#bottom' class="topmenu">Contact</a>
+                <a href="#" class="buttonordernow">Order Now</a>
+                <%--<button type="button" onclick="alert('Welcome')" class="buttonordernow">Order now</button>--%>
+            </li>
+       
+
+        </ul>
+        </div>
+    </header>
+    
+   
+   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"/>
+        
+    <footer>
+        <div >
+            <div id="footercountrybox">
+           <h2 class="countrybox">Hungry? Order in your country</h2> 
+            
+       <div class="listing-countries">
+           <h4>Asia</h4>
+           <ul class="countries">
+              <li class="india"><a href='#'>India</a></li>
+              <li class="thailand"><a href='#'>Thailand</a></li>
+              <li class="pakistan"><a href='#'>Pakistan</a></li>
+              <li class="indonesia"><a href='#'>Indonesia</a></li>
+              <li class="singapore"><a href='#'>Singapore</a></li>
+              <li class="malaysia"><a href='#'>Malaysia</a></li>
+              <li class="taiwan"><a href='#'>Taiwan</a></li>
+              <li class="bangladesh"><a href='#'>Bangladesh</a></li>
+              <li class="kazakhstan"><a href='#'>Kazakhstan</a></li>
+              <li class="hongkong"><a href='#'>HongKong</a></li>
+              <li class="philippines"><a  href='#'>Philippines</a></li>
+              <li class="brunei"><a  href='#'>Brunei</a></li>
+            </ul>
+       </div>
+         <div class="listing-countries">
+            <h4>Europe</h4>
+            <ul class="countries">
+                <li class="russia"><a href='#'>Russia</a></li>
+                <li class="hungary"><a  href='#'>Hungary</a></li>
+                <li class="romania"><a  href='#'>Romania</a></li>
+                <li class="bulgaria"><a  href='#'>Bulgaria</a></li>
+                <li class="georgia"><a  href='#'>Georgia</a></li>
+                <li class="serbia"><a href='#'>Serbia</a></li>
+                <li class="croatia"><a href='#'>Croatia</a></li>
+                <li class="montenegro"><a href='#'>Montenegro</a></li>
+                <li class="bosnia-Herzegovina"><a href='#'>BosniaHerzegovina</a></li>
+           </ul>
+        </div>
+
+          
+      <div class="listing-countries">
+         <h4>Middle East</h4>
+        <ul class="countries">
+             <li class="saudi-Arabia"><a href='#'>SaudiArabia</a></li>
+             <li class="uae"><a href='#'>UAE</a></li>
+             <li class="egypt"><a  href='#'>Egypt</a></li>
+        </ul>
+      </div>
+                </div>
+         
+      <div class="socialadvertisement"> 
+          <h4>Follow us</h4>	
+          
+               <a href="#" target="_blank"><img src="Images/twitter.png" alt="Twitter" width="40" height="40" /></a> 
+               <a href="#" target="_blank"><img src="Images/linkedin.png" alt="Linkedin" width="40" height="40" /></a>
+               <a href="#" target="_blank"><img src="Images/pinterest.png" alt="Pinterest" width="40" height="40" /></a> 
+               <a href="https://www.facebook.com" target="_blank"><img src="Images/facebook.png" alt="Facebook" width="40" height="40" /></a>
+          
+          <br /> <br /><br /> 
+          <div class="copyrighttxt">
+            Foodpanda GmbH<br />
+            2016 - All RIGHTS RESERVED
+          </div>
+      </div>
+             
+        </div>
+       </footer>
+        
+     </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
